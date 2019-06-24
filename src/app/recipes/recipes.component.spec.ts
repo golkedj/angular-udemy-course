@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RecipesComponent } from './recipes.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.component';
 
 describe('RecipesComponent', () => {
   let component: RecipesComponent;
@@ -13,7 +14,8 @@ describe('RecipesComponent', () => {
       declarations: [
         RecipesComponent,
         RecipeListComponent,
-        RecipeDetailComponent
+        RecipeDetailComponent,
+        RecipeItemComponent
       ]
     })
     .compileComponents();
