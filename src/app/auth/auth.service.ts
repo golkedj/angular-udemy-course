@@ -23,7 +23,6 @@ export interface AuthResponseData {
 @Injectable({providedIn: 'root'})
 export class AuthService {
   BASE_URL: string = 'https://identitytoolkit.googleapis.com/v1/accounts:'
-  // user = new BehaviorSubject<User>(null);
   tokenExpirationTimer: any;
 
 
