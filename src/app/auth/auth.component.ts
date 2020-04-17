@@ -19,7 +19,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   isLoading = false;
   error: string = null;
   @ViewChild(PlaceholderDirective) alertHost: PlaceholderDirective;
-  
+
   private closeSub: Subscription;
 
   constructor(
@@ -50,31 +50,14 @@ export class AuthComponent implements OnInit, OnDestroy {
     const email = form.value.email;
     const password = form.value.password;
 
-    let authObservable: Observable<AuthResponseData>;
-
-    this.isLoading = true;
     if (this.isLoginMode) {
       // authObservable = this.authService.login(email, password);
       this.store.dispatch(
         new AuthActions.LoginStart({ email, password })
       );
     } else {
-      authObservable = this.authService.signup(email, password);
+      this.store.dispatch(new AuthActions.SignupStart({ email, password }));
     }
-
-    // authObservable.subscribe(
-    //   resData => {
-    //     console.log(resData);
-    //     this.isLoading = false;
-    //     this.router.navigate(['./recipes']);
-    //   },
-    //   errorMessage => {
-    //     console.log(errorMessage);
-    //     this.error = errorMessage;
-    //     this.showErrorAlert(errorMessage);
-    //     this.isLoading = false;
-    //   }
-    // );
 
     form.reset();
   }
