@@ -41,16 +41,16 @@ export class RecipeDetailComponent implements OnInit {
     });
   }
 
-onAddToShoppingList() {
-  this.store.dispatch(new ShoppingListActions.AddIngredients(this.recipe.ingredients));
-}
+  onAddToShoppingList() {
+    this.store.dispatch(new ShoppingListActions.AddIngredients(this.recipe.ingredients));
+  }
 
-onEditRecipe() {
-  this.router.navigate(['edit'], { relativeTo: this.route });
-}
+  onEditRecipe() {
+    this.router.navigate(['edit'], { relativeTo: this.route });
+  }
 
-onDeleteRecipe() {
-  this.store.dispatch(new RecipeActions.DeleteRecipe(this.id));
-  this.router.navigate(['/recipes']);
-}
+  onDeleteRecipe() {
+    this.store.dispatch(new RecipeActions.DeleteRecipe(this.id));
+    this.router.navigate(['/recipes']);
+  }
 }
