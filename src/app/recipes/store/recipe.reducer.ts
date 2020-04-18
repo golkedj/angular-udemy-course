@@ -1,6 +1,6 @@
 import { Recipe } from '../recipe.model';
 
-import * as RecipesActions from './recipe.actions';
+import * as RecipeActions from './recipe.actions';
 
 export interface State {
   recipes: Recipe[];
@@ -11,9 +11,9 @@ const initialState: State = {
 };
 
 
-export function recipeReducer(state = initialState, action: RecipesActions.RecipesActions) {
+export function recipeReducer(state = initialState, action: RecipeActions.RecipeActions) {
   switch (action.type) {
-    case RecipesActions.SET_RECIPES:
+    case RecipeActions.SET_RECIPES:
       return {
         ...state,
         recipes: [...action.payload]
