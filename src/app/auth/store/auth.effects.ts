@@ -109,7 +109,6 @@ export class AuthEffects {
   authRedirect = this.actions$.pipe(
     ofType(AuthActions.AUTHENTICATE_SUCCESS, AuthActions.LOGOUT),
     tap(() => {
-      console.log('redirecting')
       this.router.navigate(['/']);
     })
   );
