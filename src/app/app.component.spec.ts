@@ -7,6 +7,7 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/shopping-list-edit.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
+import { provideMockStore } from '@ngrx/store/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -21,6 +22,9 @@ describe('AppComponent', () => {
         ShoppingListEditComponent,
         RecipeItemComponent
       ],
+      providers: [
+        provideMockStore({ })
+      ]
     }).compileComponents();
   }));
 

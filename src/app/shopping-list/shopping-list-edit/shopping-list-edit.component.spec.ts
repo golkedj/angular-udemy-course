@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 
 import { ShoppingListEditComponent } from './shopping-list-edit.component';
+import { FormsModule } from '@angular/forms';
 
 describe('ShoppingListEditComponent', () => {
   let component: ShoppingListEditComponent;
@@ -8,7 +10,11 @@ describe('ShoppingListEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShoppingListEditComponent ]
+      declarations: [ ShoppingListEditComponent ],
+      imports: [ FormsModule ],
+      providers: [
+        provideMockStore({ })
+      ]
     })
     .compileComponents();
   }));

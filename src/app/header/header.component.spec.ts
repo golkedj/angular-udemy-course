@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
+import { StoreModule } from '@ngrx/store';
+import * as fromApp from '../store/app.reducer';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -8,7 +10,10 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [ HeaderComponent ],
+      imports: [
+        StoreModule.forRoot(fromApp.appReducer)
+      ]
     })
     .compileComponents();
   }));
